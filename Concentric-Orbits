@@ -1,0 +1,81 @@
+float sizer = 0.5;
+float speedr = 4;
+float time = 0;
+float x1;
+float x2;
+float y1;
+float y2;
+float speed1;
+float speed2;
+int paused = 0;
+
+void setup(){
+  size(500,500);
+  background(255);
+  
+}
+
+void draw(){
+  background(255);
+  
+  fill(0);
+  textSize(16);
+  text("Size Ratio:     1 :", 25,25); 
+  text(sizer, 150,25);
+  text("Speed Ratio:  1 :", 25,45); 
+  text(speedr, 150,45);
+  
+  
+  
+  speed1 = 1;
+  speed2 =speed1*speedr/sizer;
+  
+  x1 = 250 + 200*cos(time);
+  y1 = 250 + 200*sin(time);
+  
+  x2 = 250 + sizer*200*cos(speed2*time);
+  y2 = 250 + sizer*200*sin(speed2*time);
+  
+  line(x1,y1,x2,y2);
+  
+  for(float i = 0; i <= time; i += 0.1){
+    float xx1 = 250 + 200*cos(i);
+    float yy1 = 250 + 200*sin(i);
+    
+    float xx2 = 250 + sizer*200*cos(speed2*i);
+    float yy2 = 250 + sizer*200*sin(speed2*i);
+    
+    stroke(0,100,200,200);
+    line(xx1,yy1,xx2,yy2);
+  }
+  
+  if(paused == 1){
+    if(mousePressed == true){
+      paused = 0;
+      delay(75);
+    }
+  }
+  else{
+    noFill();
+  
+    stroke(0);
+    strokeWeight(2);
+    ellipse(250,250,400,400);
+    ellipse(250,250,400*sizer,400*sizer);
+  
+    line(x1,y1,x2,y2);
+  
+    fill(255);
+    stroke(0);
+    ellipse(x1,y1,10,10);
+    ellipse(x2,y2,10,10);
+  
+    time = time + 0.01;
+    
+    if(mousePressed == true){
+      paused = 1;
+      delay(75);
+    }
+  }
+  
+}
