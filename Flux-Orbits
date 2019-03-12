@@ -1,0 +1,80 @@
+float x,y;
+float x2,y2;
+float x3,y3;
+float x4,y4;
+float x5,y5;
+float x6,y6;
+float x7,y7;
+float x8,y8;
+float x9,y9;
+float x10,y10;
+float time = 0.000;
+int dot = 7;
+float a = 2;
+float b = 1;
+float r = 0;
+float r2 = 0;
+float r3 = 0;
+float s = 0;
+float n;
+void setup(){
+  size(500,500);
+  background(255);
+  
+}
+
+void draw() {
+  background(255);
+  
+  time = time + 0.01;
+  
+  r = 55*sin(time)+150;
+  r2 = 55*sin(time+0.2)+150;
+  r3 = 55*sin(time+0.4)+150;
+  s = s + 0.01;
+  
+  
+
+  
+  for (float i = 0; i < TWO_PI; i+=PI/32) {
+    n = pow(i/PI,-1);
+    y = sin(i + s)*(13*sin(i*10+(time*2))+r)+250;
+    x = cos(i + s)*(13*sin(i*10+(time*2))+r)+250;
+    y2 = sin(i + s/1.25 + 1)*(15*sin(i*7+(time*2)+15)+r)+250;
+    x2 = cos(i + s/1.25 + 1)*(15*sin(i*7+(time*2)+15)+r)+250;
+    y3 = sin(i + s/1.5 + 3)*(13*sin(i*12+(time*2.3)+17)+r2)+250;
+    x3 = cos(i + s/1.5 + 3)*(13*sin(i*12+(time*2.3)+17)+r2)+250;
+    y4 = sin(i + s/1.75 + 2)*(17*sin(i*13+(time*1.8)+11)+r3)+250;
+    x4 = cos(i + s/1.75 + 2)*(17*sin(i*13+(time*1.8)+11)+r3)+250;
+    y5 = sin(i + s/2 + 2)*(7*sin(i*3+(time*1.9)+12)+r3)+250;
+    x5 = cos(i + s/2 + 2)*(7*sin(i*3+(time*1.9)+12)+r3)+250;
+    y6 = sin(i + s/1.95 + 2)*(16*sin(i*13+(time*2)+9)+r2)+250;
+    x6 = cos(i + s/1.95 + 2)*(16*sin(i*13+(time*2)+9)+r2)+250;
+    y7 = sin(i + s/2 + 2)*(9*sin(i*3+(time*2.1)+8)+r3)+250;
+    x7 = cos(i + s/2 + 2)*(9*sin(i*3+(time*2.1)+8)+r3)+250;
+    y8 = sin(i + s/2 + 2.5)*(11*sin(i*3+(time*1.9)+12)+r3*1.05)+250;
+    x8 = cos(i + s/2 + 2.5)*(11*sin(i*3+(time*1.9)+12)+r3*1.05)+250;
+    y9 = sin(i + s/1.65 + 4)*(10*sin(i*13+(time*2.2)+9)+r2*1.1)+250;
+    x9 = cos(i + s/1.65 + 4)*(10*sin(i*13+(time*2.2)+9)+r2*1.1)+250;
+    y10 = sin(i + s/1.15 + 1.5)*(9*sin(i*3+(time*2.1)+8)+r*1.1)+250;
+    x10 = cos(i + s/1.15 + 1.5)*(9*sin(i*3+(time*2.1)+8)+r*1.1)+250;
+    
+    
+    
+    stroke(0);
+    strokeWeight(5);
+    fill(0);
+    point(x,y);
+    point(x2,y2);
+    point(x3,y3);
+    point(x4,y4);
+    point(x5,y5);
+    point(x6,y6);
+    point(x7,y7);
+    point(x8,y8);
+    point(x9,y9);
+    point(x10,y10);
+    strokeWeight(2);
+    
+  }
+}
