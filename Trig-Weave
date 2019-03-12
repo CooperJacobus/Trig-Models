@@ -1,0 +1,28 @@
+float x,y;
+float time = 0;
+
+float a = 11;
+float b = 7;
+
+void setup() {
+  size(500,500);
+  background(255);
+}
+
+void draw() {
+  background(255);
+  
+  time = time + 0.001;
+  //a = sin(time*5+7);
+  //b = cos(time*6);
+  
+  for (float i = 0; i < 20; i+=0.0005) {
+    x = 255+(200*sin(a*PI*i));
+    y = 255+(200*cos(b*PI*i));
+    
+    fill(0,100,200,100);
+    noStroke();
+    ellipse(x,y,4,4);
+    //delay(50);
+  }
+}
